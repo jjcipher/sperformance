@@ -1,5 +1,6 @@
 import _root_.sperformance.dsl.PerformanceDSLTest
 import collection.mutable.ListBuffer
+import scala.language.reflectiveCalls
 
 object MyPerformanceTest extends PerformanceDSLTest {
   performance of "List" in {

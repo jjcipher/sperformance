@@ -1,6 +1,7 @@
 import sperformance.store._
 import java.io.File
 import sperformance.Keys
+import scala.language.reflectiveCalls
 
 object GoalTest extends sperformance.dsl.PerformanceDSLTest {
 

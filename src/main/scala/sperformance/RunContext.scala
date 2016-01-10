@@ -20,6 +20,7 @@ import org.jfree.chart.axis.NumberAxis
 import org.jfree.chart.renderer.category.BarRenderer
 import java.awt.GradientPaint
 import org.jfree.chart.axis.CategoryLabelPositions
+import scala.language.reflectiveCalls
 
 /**
  * Abstract interface designed to allow customize where reports go and how they are generated. (i.e. could be sent to a Swing UI).

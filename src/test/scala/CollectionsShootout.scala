@@ -4,11 +4,14 @@ import collection.immutable.List
 import collection.immutable.Vector
 import collection.{SeqView, Traversable}
 import collection.mutable.{IndexedSeqView, ArrayBuffer, ListBuffer, LinkedList}
+import scala.language.reflectiveCalls
+import scala.language.higherKinds
+import scala.reflect.ClassTag
 
 trait TraverableTestHelper extends sperformance.dsl.PerformanceDSLTest {
 
 
-  def makeTraversableTest[T[X]](setup : (Int) => T[Int])(implicit ev0 : ClassManifest[T[Int]], conv : T[Int] => Traversable[Int]) = {
+  def makeTraversableTest[T[X]](setup : (Int) => T[Int])(implicit ev0 : ClassTag[T[Int]], conv : T[Int] => Traversable[Int]) = {
     val collectionName = ev0.toString //ev0.erasure.getName
 
     performance of collectionName in {
@@ -119,8 +122,8 @@ object ColShootOutTest extends TraverableTestHelper {
     collection
   }
 
-  makeTraversableTest[LinkedList] { size =>
-    var collection = LinkedList[Int]()
+  makeTraversableTest[List] { size =>
+    var collection = List[Int]()
     collection = collection ++ (1 to size).toList
     collection
   }

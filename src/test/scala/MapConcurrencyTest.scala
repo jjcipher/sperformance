@@ -4,6 +4,8 @@ import collection.immutable.{HashMap=>ImmutableHashMap}
 import collection.mutable.{HashMap=>MutableHashMap}
 import java.util.concurrent.{ExecutorService,Executors}
 import annotation.tailrec
+import scala.language.implicitConversions
+import scala.language.reflectiveCalls
 
 // Abstract type for memoizing function values.
 trait Service[Key,Value] {

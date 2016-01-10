@@ -60,7 +60,7 @@ class ClusterResults extends PerformanceTestRunContext {
       for {
         attr <- result.attributes
         (axisName,_) <- result.axisData
-        val metaData = ClusterMetaData(Map(attr), Set(axisName))
+        metaData = ClusterMetaData(Map(attr), Set(axisName))
       } {
         def clusterForAttr : Option[Cluster] = clusters.get(metaData)
         val cluster : Cluster = clusterForAttr.getOrElse(addAndReturnCluster(new Cluster(metaData)))

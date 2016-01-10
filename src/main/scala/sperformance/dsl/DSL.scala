@@ -92,7 +92,7 @@ trait PerformanceDSLTest extends PerformanceTest {
     }
     def of[A : Manifest] = new {
       def in[B](f :  => B) {
-        delayUntilTest(withCurrentModule(implicitly[scala.reflect.Manifest[A]].erasure.getCanonicalName)(f))
+        delayUntilTest(withCurrentModule(implicitly[scala.reflect.Manifest[A]].runtimeClass.getCanonicalName)(f))
       }
     }
   }

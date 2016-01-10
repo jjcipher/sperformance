@@ -2,7 +2,7 @@ package sperformance
 
 import collection.Traversable
 import collection.generic.CanBuildFrom
-
+import scala.language.reflectiveCalls
 
 object PartialFunctionTest extends sperformance.dsl.PerformanceDSLTest {
   def collectWithTry[A,B, To](col : Traversable[A])(f : PartialFunction[A,B])(implicit cbf : CanBuildFrom[Traversable[A], B, To]) = {

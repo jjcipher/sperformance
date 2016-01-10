@@ -24,7 +24,7 @@ object FileUtils {
     }
     if(file.getAbsolutePath.startsWith(dirPath)) {
       file.getAbsolutePath.drop(dirPath.size)
-    } else error(dir + " is not a parent of " + file)
+    } else sys.error(dir + " is not a parent of " + file)
   }
 
   /** Finds all the index.html files in a directory... */

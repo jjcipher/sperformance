@@ -9,6 +9,8 @@ import java.io.{ByteArrayInputStream, ByteArrayOutputStream, File}
 import java.beans.{XMLEncoder,XMLDecoder}
 import xml.{Node, XML, NodeSeq}
 import sperformance.PerformanceTestRunContext
+import scala.language.postfixOps
+
 /**
  * Write a [[sperformance.intelligence.ClusterResults]] to persistent storage
  */
